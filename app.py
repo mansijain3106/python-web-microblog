@@ -8,7 +8,7 @@ load_dotenv()
 
 def create_app():
     app=Flask(__name__)
-    client= MongoClient(os.getenv("MONGODB_URL")) #MongoClient as a cluster representation
+    client= MongoClient(os.getenv("MONGODB_URI")) #MongoClient as a cluster representation
     app.db= client.microblog    #client.database actually connects to the database and is stored in app
 
 #entries=[]  temporary list to store entries coming from web page 
